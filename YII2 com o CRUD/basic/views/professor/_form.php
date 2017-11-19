@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\BaseArrayHelper;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Professor */
@@ -15,8 +17,13 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'data_nascimento')->textInput() ?>
+    
+    <?php
+    $models = \app\models\Curso::find('id_curso','nome')->asArray()->all();
+    $map = ArrayHelper::map($models, 'id_curso', 'nome'); 
+    ?>
 
-    <?= $form->field($model, 'fk_id_curso')->textInput() ?>
+    <?= $form->field($model, 'fk_id_curso')->dropDownList($map) ?>
     
      <?= $form->field($model, 'data_criacao')->textInput(['value' => date('Y-m-d H:i') ]) ?>
 
