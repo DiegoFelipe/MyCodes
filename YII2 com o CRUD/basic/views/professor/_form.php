@@ -16,7 +16,15 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_nascimento')->textInput() ?>
+     <?= $form->field($model, 'data_nascimento')->widget(\yii\jui\DatePicker::className(),
+    [ 'dateFormat' => 'php:Y-m-d',
+      'clientOptions' => [
+        'changeYear' => true,
+        'changeMonth' => true,
+        'yearRange' => '-120:-0',
+        'altFormat' => 'dd-mm-yy',
+      ]],['placeholder' => 'd/m/Y'])
+    ->textInput(['placeholder' => \Yii::t('app', 'dd/mm/yyyy')]) ;?>
     
     <?php
     $models = \app\models\Curso::find('id_curso','nome')->asArray()->all();
