@@ -1,14 +1,15 @@
 <?php
+
 namespace app\controllers;
-use mpdf;
+
 use Yii;
-class RepdfController extends \yii\web\Controller
-{
-    public function actionIndex()
-    {
+
+
+class Repdf extends \mPDF {
+    public function gerarPdf() {
         $pdf = Yii::$app->pdf;
         $pdf->content = "teste diego";
         return $pdf->render();
-        //return $this->render('index');
+        
     }
 }

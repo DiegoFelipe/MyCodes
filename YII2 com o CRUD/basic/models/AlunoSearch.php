@@ -42,6 +42,8 @@ class AlunoSearch extends Aluno
      */
     public function search($params)
     {
+        
+        
         $query = Aluno::find();
 
         // add conditions that should always apply here
@@ -74,5 +76,11 @@ class AlunoSearch extends Aluno
             ->andFilterWhere(['like', 'cep', $this->cep]);
 
         return $dataProvider;
+        
+        
+        
+        
     }
+    
+    
 }

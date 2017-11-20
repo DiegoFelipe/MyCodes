@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+
+
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\AlunoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -10,6 +13,8 @@ use yii\grid\GridView;
 $this->title = 'Alunos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
 <div class="aluno-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -37,5 +42,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    
+   ?>
+   <a class="btn btn-lg btn-success" href="?r=repdf/index">Download em PDF</a>
+        
+
 </div>
+
+
+
+

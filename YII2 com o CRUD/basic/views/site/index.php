@@ -8,7 +8,8 @@ $this->title = 'PHP CRUD usando YII2 - Flexpeak';
 
     <div class="jumbotron">
         <h1>BEM-VINDO</h1>
-
+        
+        
         <p class="lead">Escolha no menu abaixo em qual tabela você deseja operar.</p>
 
         <p>
@@ -18,6 +19,10 @@ $this->title = 'PHP CRUD usando YII2 - Flexpeak';
             <a class="btn btn-lg btn-success" href="?r=curso/index">Curso</a>
         
         </p>
+    </div>
+    
+    <div>
+     
     </div>
 
   

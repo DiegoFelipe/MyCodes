@@ -1,21 +1,37 @@
 <?php
 
+use kartik\mpdf\Pdf;
+
+
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
+    
     'id' => 'basic',
+    
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    
+    
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'sakjdb87b2bd08b82bd82wb8db',
         ],
+         'pdf' => [
+            'class' => Pdf::classname(),
+            //'mode' => Pdf::MODE_UTF8,
+            'format' => Pdf::FORMAT_A4,
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+            'destination' => Pdf::DEST_BROWSER,
+            // refer settings section for all configuration options
+        ],
+    
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
