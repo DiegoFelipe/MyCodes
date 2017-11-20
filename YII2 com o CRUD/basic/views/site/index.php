@@ -1,5 +1,8 @@
 <?php
 
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\web\View;
 /* @var $this yii\web\View */
 
 $this->title = 'PHP CRUD usando YII2 - Flexpeak';
@@ -17,7 +20,7 @@ $this->title = 'PHP CRUD usando YII2 - Flexpeak';
             <a class="btn btn-lg btn-success" href="?r=professor/index">Professores</a>
             <a class="btn btn-lg btn-success" href="?r=notas/index">Notas</a>
             <a class="btn btn-lg btn-success" href="?r=curso/index">Curso</a>
-        
+            
         </p>
     </div>
     

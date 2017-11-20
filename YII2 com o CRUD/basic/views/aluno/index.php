@@ -22,6 +22,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Criar Aluno', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php echo Html::a('<i class="glyphicon glyphicon-print"></i> Imprimir', ['/export/export-pdf', 'title'=>'Relatório de Alunos', 'header'=>'Alunos', 'table'=>'aluno'], [
+                'class'=>'btn btn-success', 
+                'target'=>'_blank', 
+                'data-toggle'=>'tooltip', 
+                'title'=>'Gerar relatório PDF'
+            ]);?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
