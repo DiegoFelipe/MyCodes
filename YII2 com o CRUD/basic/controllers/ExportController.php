@@ -1,11 +1,8 @@
 <?php
-
 namespace app\controllers;
-
 use Yii;
 use yii\web\Controller;
 use kartik\mpdf\Pdf;
-
 class ExportController extends Controller
 {
     public function actionExportPdf($header, $title) {    
